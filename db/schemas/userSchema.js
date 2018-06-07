@@ -4,7 +4,7 @@ const brewerySchema = require('./brewerySchema')
 const userSchema = new Schema({
     username: {
         type: String,
-        required: true
+        // required: true,
     },
     profilePicture: String,
     favoriteBeer: String,
