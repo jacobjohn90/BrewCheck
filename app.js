@@ -32,8 +32,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 // Registering controllers
 app.use('/', indexRouter);
 app.use('/users', userController);
-app.use('/user/:userId/breweries', breweriesController)
-app.use('/user/:userId/breweries/breweryId/beers', beersController)
+app.use('/users/:userId/breweries', breweriesController)
+app.use('/users/:userId/breweries/breweryId/beers', beersController)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
