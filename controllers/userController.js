@@ -51,6 +51,34 @@ router.get('/:userId', (req, res) => {
 })
 
 //EDIT SPECIFIC USER
+router.get('/:userId/edit', (req, res) => {
+  const userId = req.params.userId
+
+  User.findById(userId)
+    .then((user)=> {
+      res.render('user/edit', {
+        user
+      })
+    })
+    .catch((err) => {
+      console.log('Error trying to go to the Edit User Page. Error is ' + err)
+    })
+})
+
+//UPDATE ROUTE
+router.put('/:userId', (req, res) => {
+  User
+    .findByIdAndUpdate(req.params.userId, req.body, {new: true})
+    .then(()=> {
+      res.redirect(`/users/${req.params.userId}`)
+      console.log('put successfull')
+    })
+    .catch((err) => {
+      console.log('Error trying to Update User. Error is: ' + err)
+    })
+})
+
+//DELETE ROUTE
 
 
 module.exports = router;
