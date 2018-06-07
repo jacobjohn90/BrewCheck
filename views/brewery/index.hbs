@@ -1,0 +1,10 @@
+<h1>
+    Welcome to your BrewCheck, {{user.username}}</h1>
+
+<ul>
+    {{#each breweries}}
+    <li>
+        <a href="/users/{{../user._id}}/breweries/{{this._id}}">{{nameOfBrewery}}</a>
+    </li>
+    {{/each}}
+</ul>

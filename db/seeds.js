@@ -22,7 +22,7 @@ User.remove({})
         })
 
         const brewery1 = new Brewery({
-            nameofBrewery: 'Brewery1',
+            nameOfBrewery: 'Brewery1',
             picture: 'www.brewery1.com',
             location: 'location1',
             hoursOfOperation: 'test1-test2',
@@ -38,7 +38,7 @@ User.remove({})
         brewery1.popularBeers.push(beer1)
 
         const brewery2 = new Brewery({
-            nameofBrewery: 'Brewery2',
+            nameOfBrewery: 'Brewery2',
             picture: 'www.brewery2.com',
             location: 'location2',
             hoursOfOperation: 'test2-test3',
@@ -66,14 +66,14 @@ User.remove({})
     })
     .then((test2u) => {
         const brewery3 = new Brewery({
-            nameofBrewery: 'Brewery3',
+            nameOfBrewery: 'Brewery3',
             picture: 'www.brewery3.com',
             location: 'location3',
             hoursOfOperation: 'test3-test4',
             tried: false,
         })
         const brewery4 = new Brewery({
-            nameofBrewery: 'Brewery4',
+            nameOfBrewery: 'Brewery4',
             picture: 'www.brewery4.com',
             location: 'location4',
             hoursOfOperation: 'test4-test5',

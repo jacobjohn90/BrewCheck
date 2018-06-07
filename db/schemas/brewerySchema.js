@@ -2,7 +2,7 @@ const Schema = require('mongoose').Schema
 const beerSchema = require('./beerSchema')
 
 const brewerySchema = new Schema ({
-    nameofBrewery: {
+    nameOfBrewery: {
         type: String,
         require: true
     },
