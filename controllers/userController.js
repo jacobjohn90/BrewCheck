@@ -71,7 +71,6 @@ router.put('/:userId', (req, res) => {
     .findByIdAndUpdate(req.params.userId, req.body, {new: true})
     .then(()=> {
       res.redirect(`/users/${req.params.userId}`)
-      console.log('put successfull')
     })
     .catch((err) => {
       console.log('Error trying to Update User. Error is: ' + err)
@@ -79,6 +78,13 @@ router.put('/:userId', (req, res) => {
 })
 
 //DELETE ROUTE
-
+router.delete('/:userId', (req,res) => {
+  User
+    .findByIdAndRemove(req.params.userId)
+    .then(()=> {
+      console.log(`Successfully Deleted ${req.params.userId.username}`)
+      res.redirect('/users')
+    })
+})
 
 module.exports = router;
