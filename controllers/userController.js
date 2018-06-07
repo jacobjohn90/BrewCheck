@@ -3,7 +3,6 @@ const router = express.Router();
 const User = require('../models/User')
 
 //  GET USERS INDEX PAGE
-
 router.get('/', function(req, res) {
   User
     .find()
@@ -17,5 +16,25 @@ router.get('/', function(req, res) {
       console.log('Error getting User Index Page. Error is ' + err)
     })
 });
+
+// NEW USER ROUTE
+router.get('/new', (req, res) => {
+  res.render('user/new')
+})
+
+// CREATE USER ROUTE
+router.post('/', (req, res) => {
+  const newUser = req.body
+  User
+    .create(newUser)
+    .then(()=> {
+      res.redirect('/users')
+    })
+    .catch ((err) => {
+      res.send(err)
+      console.log('Error creating new user. The error is: ' + err)
+    })
+})
+
 
 module.exports = router;
