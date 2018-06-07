@@ -36,5 +36,19 @@ router.post('/', (req, res) => {
     })
 })
 
+// SHOW ROUTE FOR SPECIFIC USER
+router.get('/:userId', (req, res) => {
+  const userId = req.params.userId
+  User.findById(userId)
+    .then((user) => {
+      res.render('user/show', {
+        user
+      })
+    })
+    .catch((err)=>{
+      console.log('Error showing specific user. Error is: ' + err)
+    })
+})
+
 
 module.exports = router;

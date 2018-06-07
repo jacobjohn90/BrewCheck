@@ -17,7 +17,6 @@ User.remove({})
     .then(() => {
         const test1User = new User({
             username: 'Test_1Name',
-            profilePicture: 'www.test1.com',
             favoriteBeer: 'Beer1',
             favoriteBrewery: 'Brewery1'
         })
