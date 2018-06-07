@@ -9,7 +9,7 @@ const userSchema = new Schema({
     profilePicture: String,
     favoriteBeer: String,
     favoriteBrewery: String,
-    BrewCheck: [brewerySchema]
+    brewCheck: [brewerySchema]
 })
 
 module.exports = userSchema

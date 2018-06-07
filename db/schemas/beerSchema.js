@@ -7,7 +7,7 @@ const beerSchema = new Schema({
     },
     type: String,
     abv: Number,
-    Tried: Boolean,
+    tried: Boolean,
     rating: Number
 })
 
