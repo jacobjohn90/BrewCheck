@@ -2,6 +2,7 @@ const express = require('express')
 const router = express.Router({ mergeParams: true })
 
 const User = require('../models/User')
+const Brewery = require('../models/Brewery')
 
 //GET TO BREWERY INDEX
 router.get('/', (req, res) => {
@@ -31,7 +32,18 @@ router.get('/new', (req, res) => {
         })
 })
 //CREATE ROUTE FOR NEW BREWERY
+router.post('/', (req, res) => {
+    const brewery = new Brewery(req.body)
+    User.findById(req.params.userId)
+        .then((user)=> {
+            user.brewCheck.push(brewery)
+            return user.save()
+        })
+        .then(()=> {
+            res.redirect(`/users/${req.params.userId}/breweries`)
+        })
 
+})
 //SHOW ROUTE FOR SPECIFIC BREWERY
 
 //EDIT ROUTE FOR SPECIFIC BREWERY
