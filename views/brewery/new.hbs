@@ -1,18 +1,31 @@
- 
- 
- 
- 
- 
- 
- 
- 
- nameofBrewery: {
-        type: String,
-        require: true
-    },
-    picture: String,
-    location: String,
-    hoursOfOperation: String,
-    popularBeers: [beerSchema],
-    tried: Boolean,
-})
+<h1>Create New Brewery</h1>
+
+<form action="/users/{{userId}}/breweries" method="POST">
+    <div>
+        <label for="nameOfBrewery">Name of Brewery</label>
+        <input type="text" name="nameOfBrewery" placeholder="Name of Brewery" />
+    </div>
+    <div>
+        <label for="picture">Picture of Brewery URL</label>
+        <input type="text" name="picture" />
+    </div>
+    <div>
+        <label for="location">Location of Brewery</label>
+        <input type="text" name="location" placeholder="Location" />
+    </div>
+    <div>
+        <label for="hoursOfOperation">Hours of Operation</label>
+        <input type="text" name="hoursOfOperation" placeholder="Hours of Operation" />
+    </div>
+    <div>
+        <span>Have you Tried this Place Yet?</span>
+        <input type="radio" id="tried1" name="tried" value="true">
+        <label for="contactChoice1">Yup</label>
+
+        <input type="radio" id="tried2" name="tried" value="false">
+        <label for="contactChoice2">I will!</label>
+
+        <br>
+        <br>
+        <button type="submit">Save Brewery</button>
+</form>
