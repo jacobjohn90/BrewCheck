@@ -89,7 +89,7 @@ router.put('/:breweryId', (req, res) => {
     const userId = req.params.userId
     const breweryId = req.params.breweryId
     const updatedBrewery = req.body
-    console.log(updatedBrewery)
+    // console.log(updatedBrewery.name)
 
     User.findById(userId).then(user => {
         const brewery = user.brewCheck.id(breweryId)
@@ -121,6 +121,28 @@ router.put('/:breweryId', (req, res) => {
 
 })
 //DELETE ROUTE FOR SPECIFIC BREWERY
-
+router.delete('/:breweryId', (req, res) => {
+    const userId = req.params.userId
+    const breweryId = req.params.breweryId
+    User
+        .findById(userId)
+        .then((user)=> {
+            user.brewCheck.id(breweryId).remove()
+            return user.save()
+        })
+        .then(()=> {
+            res.redirect(`/users/${userId}/breweries/`)
+        })
+//         .findOneAndRemove({
+//             "_id": userId,
+//             "brewCheck._id": breweryId
+//         })
+//         .then(()=> {
+//             res.redirect(`/users/${userId}/breweries/`)
+//         })
+//         .catch((err) => {
+//             console.log('Error trying to delete specific brewery. Error is: ' + err)
+//         })
+})
 
 module.exports = router
