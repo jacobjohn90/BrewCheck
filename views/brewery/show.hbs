@@ -1,0 +1,16 @@
+<h1>Welcome {{user.username}}! This is the {{brewery.nameOfBrewery}} page</h1>
+
+<div>
+    {{#if brewery.picture}}
+<img src="{{brewery.picture}}" alt="Picture of {{brewery.nameOfBrewery}}"> {{else}}
+<img src="https://s3.amazonaws.com/anchor_cms_production/promotions/1/full/brewery-tour.jpg" alt="Picture of {{brewery.nameOfBrewery}}"> {{/if}}
+<p>Hours of Operation: {{brewery.hoursOfOperation}}</p>
+<p>Have You Been Here Yet? {{brewery.tried}}</p>
+</div>
+
+{{!-- picture: String,
+    location: String,
+    hoursOfOperation: String,
+    popularBeers: [beerSchema],
+    tried: Boolean,
+}) --}}

@@ -26,13 +26,13 @@ User.remove({})
             picture: 'www.brewery1.com',
             location: 'location1',
             hoursOfOperation: 'test1-test2',
-            tried: false,
+            tried: 'Yup!',
         })
         const beer1 = new Beer({
             name: 'beer1',
             type: 'type1',
             abv: 1,
-            tried: false,
+            tried: "Not Yet!",
             rating: 1,
         })
         brewery1.popularBeers.push(beer1)
@@ -42,13 +42,13 @@ User.remove({})
             picture: 'www.brewery2.com',
             location: 'location2',
             hoursOfOperation: 'test2-test3',
-            tried: true,
+            tried: "Yup!",
         })
         const beer2 = new Beer({
             name: 'beer2',
             type: 'type2',
             abv: 2,
-            tried: true,
+            tried: "Yup!",
             rating: 2,
         })
         brewery2.popularBeers.push(beer2)
@@ -70,14 +70,14 @@ User.remove({})
             picture: 'www.brewery3.com',
             location: 'location3',
             hoursOfOperation: 'test3-test4',
-            tried: false,
+            tried: "Not Yet!",
         })
         const brewery4 = new Brewery({
             nameOfBrewery: 'Brewery4',
             picture: 'www.brewery4.com',
             location: 'location4',
             hoursOfOperation: 'test4-test5',
-            tried: false,
+            tried: "Not Yet!",
         })
         test2u.brewCheck.push(brewery3, brewery4)
 

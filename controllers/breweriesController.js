@@ -34,18 +34,38 @@ router.get('/new', (req, res) => {
 //CREATE ROUTE FOR NEW BREWERY
 router.post('/', (req, res) => {
     const brewery = new Brewery(req.body)
-    User.findById(req.params.userId)
-        .then((user)=> {
+    User
+        .findById(req.params.userId)
+        .then((user) => {
             user.brewCheck.push(brewery)
             return user.save()
         })
-        .then(()=> {
+        .then(() => {
             res.redirect(`/users/${req.params.userId}/breweries`)
+        })
+        .catch((err)=> {
+            console.log('Error trying to create new brewery. Error is: ' + err)
         })
 
 })
 //SHOW ROUTE FOR SPECIFIC BREWERY
-
+router.get('/:breweryId', (req, res) => {
+    const userId = req.params.userId
+    const breweryId = req.params.breweryId
+    User
+        .findById(userId)
+        .then((user)=> {
+            const brewery = user.brewCheck.id(breweryId)
+            res.render('brewery/show', {
+                userId,
+                brewery,
+                user
+            })
+        })
+        .catch((err)=> {
+            console.log('Error trying to show specific brewery. Error is: ' + err)
+        })
+})
 //EDIT ROUTE FOR SPECIFIC BREWERY
 
 //UPDATE ROUTE FOR SPECIFIC BREWERY

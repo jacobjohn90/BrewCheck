@@ -10,7 +10,7 @@ const brewerySchema = new Schema ({
     location: String,
     hoursOfOperation: String,
     popularBeers: [beerSchema],
-    tried: Boolean,
+    tried: String,
 })
 
 module.exports = brewerySchema
