@@ -1,0 +1,32 @@
+<h1>Add a New Beer Below</h1>
+
+<form action="/users/{{userId}}/breweries/{{breweryId}}/beers" method="POST">
+    <div>
+        <label for="name">Name of Beer</label>
+        <input type="text" name="name" placeholder="Name of Beer" />
+    </div>
+    <div>
+        <label for="Type">Type of Beer</label>
+        <input type="text" name="Type" placeholder="Type of Beer"/>
+    </div>
+    <div>
+        <label for="abv">ABV</label>
+        <input type="number" name="abv" placeholder="0.00" />
+    </div>
+        <div>
+        <span>Have you Tried this Beer Yet?</span>
+        <input type="radio" id="tried1" name="tried" value="Yup!">
+        <label for="contactChoice1">Yup!</label>
+
+        <input type="radio" id="tried2" name="tried" value="Not Yet!">
+        <label for="contactChoice2">Not Yet!</label>
+    </div>
+    <div>
+        <label for="rating">Rate This Beer! (10 is the best, 1 is the worst)</label>
+        <input type="number" name="rating" placeholder="5" />
+    </div>
+        <br>
+        <br>
+        <button type="submit">Save Beer</button>
+</form>
+
