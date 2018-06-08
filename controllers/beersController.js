@@ -17,8 +17,10 @@ router.get('/', (req, res)=> {
             const beers = brewery.popularBeers
             res.render('beer/index', {
                 beers,
-                userId: user._id,
-                brewery 
+                userId,
+                breweryId,
+                brewery,
+                user 
             })
         })
 })

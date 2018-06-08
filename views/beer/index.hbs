@@ -2,6 +2,10 @@
 
 <ul>
     {{#each beers}}
-    <li>{{name}}</li>
+    <li>
+        <a href="/users/{{../user._id}}/breweries/{{../brewery._id}}/beers/{{this._id}}">{{name}}</a>
+        </li>
     {{/each}}
 </ul>
+
+<a href="/users/{{userId}}/breweries/{{breweryId}}/beers/new"><button type="submit">Add New Beer</button></a>
