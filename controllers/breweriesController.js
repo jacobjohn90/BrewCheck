@@ -43,7 +43,7 @@ router.post('/', (req, res) => {
         .then(() => {
             res.redirect(`/users/${req.params.userId}/breweries`)
         })
-        .catch((err)=> {
+        .catch((err) => {
             console.log('Error trying to create new brewery. Error is: ' + err)
         })
 
@@ -54,7 +54,7 @@ router.get('/:breweryId', (req, res) => {
     const breweryId = req.params.breweryId
     User
         .findById(userId)
-        .then((user)=> {
+        .then((user) => {
             const brewery = user.brewCheck.id(breweryId)
             res.render('brewery/show', {
                 userId,
@@ -62,14 +62,64 @@ router.get('/:breweryId', (req, res) => {
                 user
             })
         })
-        .catch((err)=> {
+        .catch((err) => {
             console.log('Error trying to show specific brewery. Error is: ' + err)
         })
 })
 //EDIT ROUTE FOR SPECIFIC BREWERY
-
+router.get('/:breweryId/edit', (req, res) => {
+    const userId = req.params.userId
+    const breweryId = req.params.breweryId
+    User
+        .findById(userId)
+        .then((user) => {
+            const brewery = user.brewCheck.id(breweryId)
+            const checked = brewery.tried
+            console.log('value for checked is: ' + checked)
+            res.render('brewery/edit', {
+                userId,
+                brewery,
+                user,
+                checked
+            })
+        })
+})
 //UPDATE ROUTE FOR SPECIFIC BREWERY
+router.put('/:breweryId', (req, res) => {
+    const userId = req.params.userId
+    const breweryId = req.params.breweryId
+    const updatedBrewery = req.body
+    console.log(updatedBrewery)
 
+    User.findById(userId).then(user => {
+        const brewery = user.brewCheck.id(breweryId)
+
+        brewery.nameOfBrewery = updatedBrewery.nameOfBrewery
+        brewery.location = updatedBrewery.location
+        brewery.hoursOfOperation = updatedBrewery.hoursOfOperation
+        brewery.tried = updatedBrewery.tried
+
+        return user.save()
+    }).then(() => {
+        res.redirect(`/users/${userId}/breweries/${breweryId}`)
+    })
+    // User
+    //     .findOneAndUpdate(
+    //         { "_id": userId, "brewCheck._id": breweryId },
+    //         {
+    //             "$set": {
+    //                 "brewCheck.$": updatedBrewery
+    //             }
+    //         }, {
+    //         })
+    //     .then((updated) => {
+    //         console.log(updated.brewCheck)
+
+    //         res.redirect(`/users/${userId}/breweries/${breweryId}`)
+    //     })
+
+
+})
 //DELETE ROUTE FOR SPECIFIC BREWERY
 
 
