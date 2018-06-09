@@ -1,0 +1,10 @@
+<h1>{{beer.name}}</h1>
+
+<p>Type: {{beer.type}}</p>
+<p>ABV: {{beer.abv}}</p>
+<p>Have you tried this beer yet? {{beer.tried}}</p>
+<p>Rating: {{beer.rating}}</p>
+<br>
+<a href="/users/{{user._id}}/breweries/{{brewery._id}}/beers/{{beer._id}}/edit">
+    <button type="submit">Edit Beer Info</button>
+</a>

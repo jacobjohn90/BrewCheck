@@ -54,7 +54,27 @@ router.post('/', (req, res)=> {
         })
 })
 //SHOW ROUTE TO SHOW SPECIFIC BEER
+router.get('/:beerId', (req, res) => {
+    const userId = req.params.userId
+    const breweryId = req.params.breweryId
+    const beerId = req.params.beerId
 
+    User
+        .findById(userId)
+        .then((user)=> {
+            const brewery = user.brewCheck.id(breweryId)
+            const beer = brewery.popularBeers.id(beerId)
+
+            res.render('beer/show', {
+                user,
+                brewery,
+                beer
+            })
+        })
+        .catch((err)=> {
+            console.log('Error showing specific beer. Error is: ' + err)
+        })
+})
 //EDIT ROUTE TO EDIT SPECIFIC BEER
 
 //UPDATE ROUTE
