@@ -76,9 +76,74 @@ router.get('/:beerId', (req, res) => {
         })
 })
 //EDIT ROUTE TO EDIT SPECIFIC BEER
+router.get('/:beerId/edit', (req, res)=> {
+    const userId = req.params.userId
+    const breweryId = req.params.breweryId
+    const beerId = req.params.beerId
 
+    User
+        .findById(userId)
+        .then((user)=> {
+            const brewery = user.brewCheck.id(breweryId)
+            const beer = brewery.popularBeers.id(beerId)
+
+            res.render('beer/edit', {
+                user,
+                brewery,
+                beer
+            })
+            .catch((err)=> {
+                console.log('Error trying to go to Edit Page for beer. Error is: ' + err)
+            })
+        })
+})
 //UPDATE ROUTE
+router.put('/:beerId', (req, res)=> {
+    const userId = req.params.userId
+    const breweryId = req.params.breweryId
+    const beerId = req.params.beerId
+    const updatedBeer = req.body
 
+    User
+        .findById(userId)
+        .then((user)=> {
+            const brewery = user.brewCheck.id(breweryId)
+            const beer = brewery.popularBeers.id(beerId)
+
+            beer.name = updatedBeer.name
+            beer.type = updatedBeer.type
+            beer.abv = updatedBeer.abv
+            beer.tried = updatedBeer.tried
+            beer.rating = updatedBeer.rating
+
+            return user.save()
+        })
+        .then(()=> {
+            res.redirect(`/users/${userId}/breweries/${breweryId}/beers/${beerId}`)
+        })
+        .catch((err)=> {
+            console.log('Error Updating Beer Info. Error is: ' + err)
+        })
+
+})
 //DELETE ROUTE TO DELETE SPECIFIC BEER
+router.delete('/:beerId', (req, res)=> {
+    const userId = req.params.userId
+    const breweryId = req.params.breweryId
+    const beerId = req.params.beerId
+
+    User
+        .findById(userId)
+        .then((user)=> {
+            user.brewCheck.id(breweryId).popularBeers.id(beerId).remove()
+            return user.save()
+        })
+        .then(()=> {
+            res.redirect(`/users/${userId}/breweries/${breweryId}/beers`)
+        })
+        .catch((err)=> {
+            console.log('Error trying to delete specific beer. Error is: ' + err)
+        })
+})
 
 module.exports = router

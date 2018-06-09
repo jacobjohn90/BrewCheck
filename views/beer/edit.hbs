@@ -1,0 +1,35 @@
+<h1>Edit {{beer.name}}</h1>
+
+<form action="/users/{{user._id}}/breweries/{{brewery._id}}/beers/{{beer._id}}?_method=PUT" method="POST">
+    <div>
+        <label for="name">Name of Beer</label>
+        <input type="text" name="name" value={{beer.name}} />
+    </div>
+    <div>
+        <label for="type">Type of Beer</label>
+        <input type="text" name="type" value={{beer.type}}/>
+    </div>
+    <div>
+        <label for="abv">ABV</label>
+        <input type="number" name="abv" value={{beer.abv}} />
+    </div>
+        <div>
+        <span>Have you Tried this Beer Yet?</span>
+        <input type="radio" id="tried1" name="tried" value="Yup!" checked="true">
+        <label for="contactChoice1">Yup!</label>
+
+        <input type="radio" id="tried2" name="tried" value="Not Yet!">
+        <label for="contactChoice2">Not Yet!</label>
+    </div>
+    <div>
+        <label for="rating">Rate This Beer! (10 is the best, 1 is the worst)</label>
+        <input type="number" name="rating" value={{beer.rating}} />
+    </div>
+        <br>
+        <br>
+        <button type="submit">Save Beer</button>
+</form>
+
+<form action="/users/{{user._id}}/breweries/{{brewery._id}}/beers/{{beer._id}}?_method=DELETE" method="POST">
+    <button type="submit">Delete User</button>
+</form>
