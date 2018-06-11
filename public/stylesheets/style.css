@@ -67,7 +67,14 @@ body {
   background: rgba(255, 255, 255, .9);
   color: black;
 }
-
+.redBtn {
+  background: rgba(255, 0, 0, 0.75);
+  color: white;
+}
+.redBtn:hover {
+  background: rgba(255, 255, 255, .9);
+  color: black;
+}
 #indexUserBtn {
   position: absolute;
   left: 33%;
@@ -128,6 +135,26 @@ a {
 #showImg {
   margin: auto;
 }
+/* EDIT/NEW */
+.form-container {
+  max-width: 300px;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.75); 
+  border-radius: 50px;
+  margin: auto;
+  margin-top: 20px;
+}
+.form-row {
+  display: flex;
+  margin: 2px;
+}
+.form-row label {
+  margin-right: 5px;
+}
+.form-row input {
+  flex: 1;
+}
+
 
 /* MEDIA */
 
@@ -170,6 +197,11 @@ a {
   #showText {
     margin-left: 10px;
   }
+  .form-container {
+    max-width: 500px;
+    position: absolute;
+    top: 35%;
+    left: 10%;
 }
 
 

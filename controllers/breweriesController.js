@@ -103,21 +103,6 @@ router.put('/:breweryId', (req, res) => {
     }).then(() => {
         res.redirect(`/users/${userId}/breweries/${breweryId}`)
     })
-    // User
-    //     .findOneAndUpdate(
-    //         { "_id": userId, "brewCheck._id": breweryId },
-    //         {
-    //             "$set": {
-    //                 "brewCheck.$": updatedBrewery
-    //             }
-    //         }, {
-    //         })
-    //     .then((updated) => {
-    //         console.log(updated.brewCheck)
-
-    //         res.redirect(`/users/${userId}/breweries/${breweryId}`)
-    //     })
-
 
 })
 //DELETE ROUTE FOR SPECIFIC BREWERY
