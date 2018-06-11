@@ -19,7 +19,6 @@ const mongoose = require('mongoose');
 mongoose.connect(process.env.MONGODB_URI);
 
 // view engine setup
-app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 
 app.use(methodOverride('_method'))
