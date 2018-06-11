@@ -59,6 +59,14 @@ body {
   background:rgba(255, 255, 255, .9);
   color: black;
 }
+.greenBtn {
+  background: rgba(45, 194, 0, 0.75);
+  color: white;
+}
+.greenBtn:hover {
+  background: rgba(255, 255, 255, .9);
+  color: black;
+}
 
 #indexUserBtn {
   position: absolute;
@@ -69,7 +77,7 @@ a {
   text-decoration: none;
 }
 
-/* User */
+/* Index */
 
 .content-container {
   width: 100%;
@@ -103,6 +111,25 @@ a {
   flex: 1;
   margin: 10px auto;
 }
+/* Show */
+
+.show-container {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  margin: 20px;
+  background-color: rgba(255, 255, 255, 0.75);
+  border-radius: 50px;
+}
+#showText {
+  margin-left: 10px;
+  margin: auto;
+}
+#showImg {
+  margin: auto;
+}
+
+/* MEDIA */
 
 
 @media (min-width: 500px) {
@@ -133,7 +160,18 @@ a {
   #addUserBtn {
     margin: 10px auto;
   }
+  .show-container {
+    flex-direction: row;
+    max-width: 500px;
+    position: absolute;
+    top: 35%;
+    left: 10%;
+  }
+  #showText {
+    margin-left: 10px;
+  }
 }
+
 
 
 @media (min-width: 850px) {
