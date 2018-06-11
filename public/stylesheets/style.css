@@ -28,7 +28,6 @@ html, body {
   background-position: top;
   background-size: cover;
   flex: 1
-  /* background-attachment: fixed; */
 
 
 }
@@ -65,7 +64,6 @@ html, body {
     background-repeat: no-repeat;
     background-position: top;
     background-size: cover;
-    flex: 1
   }
   #userBtn {
     left: 20%;
