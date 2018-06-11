@@ -20,6 +20,7 @@ mongoose.connect(process.env.MONGODB_URI);
 
 // view engine setup
 app.set('view engine', 'hbs');
+app.set('views', path.join(__dirname, 'views'))
 
 app.use(methodOverride('_method'))
 app.use(logger('dev'));
