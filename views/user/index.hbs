@@ -1,0 +1,11 @@
+<h1>Welcome Users</h1>
+
+<ul>
+    {{#each listOfUsers}}
+    <li>
+        <a href="/users/{{_id}}">{{username}}</a>
+    </li>
+    {{/each}}
+
+    <a href="/users/new"><button type="submit">Add New User</button></a>
+</ul>

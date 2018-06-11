@@ -1,0 +1,25 @@
+<h1>Edit Me!</h1>
+
+<form action="/users/{{user._id}}?_method=PUT" method="POST">
+    <div>
+        <label for="username">Username</label>
+        <input type="text" name="username" value={{user.username}} />
+    </div>
+    <div>
+        <label for="profilePicture">Profile Picture URL</label>
+        <input type="text" name="profilePicture" />
+    </div>
+    <div>
+        <label for="favoriteBeer">Favorite Beer</label>
+        <input type="text" name="favoriteBeer" value={{user.favoriteBeer}} />
+    </div>
+    <div>
+        <label for="favoriteBrewery">Favorite Brewery</label>
+        <input type="text" name="favoriteBrewery" value={{user.favoriteBrewery}} />
+    </div>
+    
+    <button type="submit">Edit User</button>
+</form>
+<form action="/users/{{user._id}}?_method=DELETE" method="POST">
+    <button type="submit">Delete User</button>
+</form>
