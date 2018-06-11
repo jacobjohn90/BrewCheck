@@ -1,73 +1,137 @@
+/* Global */
+
 html, body {
   margin: 0;
   padding: 0;
   height: 100%;
   width: 100%;
 }
-#index-container {
+body {
+  background: url(https://source.unsplash.com/MYxvETrYabg);
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: cover;
+  background-attachment: fixed;
+}
+.main-container {
   display: flex;
   flex-direction: column;
 }
+
 .header {
   height: 15vh;
   font-size: 1rem;
   text-align: center;
   display: flex;
+  flex-direction: column;
   flex: 1;
+  background-color: white;
 }
+
 .header h1 {
   font-family: 'Roboto', sans-serif;
   margin: auto;
 }
 
-.backimg {
-  height: 85vh;
-  width: 100%;
-  background: url(https://source.unsplash.com/MYxvETrYabg);
-  background-repeat: no-repeat;
-  background-position: top;
-  background-size: cover;
-  flex: 1
-
-
+.breadcrumb {
+  margin: 0;
+  z-index: 1;
 }
+
+.breadcrumb li {
+  font-size: .8rem;
+}
+
 .btn {
   border: 1px solid black;
-  padding: 10px 40px;
+  padding: 10px 15px;
   display: inline-block;
   border-radius: 50px;
 }
 
-#userBtn {
+.yellowBtn {
   background: rgba(255, 225, 92, 0.75);
-  position: absolute;
-  left: 33%;
-  top: 25%;
   text-decoration: none;
   color: white;
-
-
-
 }
-#userBtn:hover {
+
+.yellowBtn:hover {
   background:rgba(255, 255, 255, .9);
   color: black;
 }
 
+#indexUserBtn {
+  position: absolute;
+  left: 33%;
+  top: 25%;
+}
+a {
+  text-decoration: none;
+}
+
+/* User */
+
+.content-container {
+  width: 100%;
+  flex: 1
+}
+#users {
+  max-width: 250px;
+  min-width: 185px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 10px;
+  background-color: rgba(255, 255, 255, 0.75);
+  border-radius: 50px;
+  margin: 10px auto 0 auto;
+}
+#users #userImg {
+  margin: auto;
+  border-radius: 25px;
+  flex: 1;
+}
+#users #userName {
+  padding: 20px;
+  text-decoration: none;
+  background-color: rgba(255, 255, 255, .9);
+  margin: 10px;
+  flex: 1;
+}
+#addUserBtn {
+  max-width: 200px;
+  flex: 1;
+  margin: 10px auto;
+}
+
 
 @media (min-width: 500px) {
-  .header {
-    font-size: 1.2rem;
-  }
-  .backimg {
-    background: url(https://source.unsplash.com/46Yad80Ynp4);
+  body {
+    background-image: url(https://source.unsplash.com/46Yad80Ynp4);
     background-repeat: no-repeat;
     background-position: top;
     background-size: cover;
+    background-attachment: fixed;
   }
+  .header {
+    font-size: 1.2rem;
+  }
+  .content-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin: 20px;
+    grid-gap: .5% .5%;
+  }
+  #users {
+    margin: auto;
+  }
+
   #userBtn {
     left: 20%;
     top: 45%;
+  }
+  #addUserBtn {
+    margin: 10px auto;
   }
 }
 

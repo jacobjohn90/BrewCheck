@@ -1,15 +1,29 @@
-<h1>Welcome Users</h1>
-<div id="userIndex-container">
+<div class="main-container">
     <div class="header">
-        <h1>{{title}}</h1>
+        <h1>Welcome Users</h1>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="/">Home</a>
+            </li>
+            <li class="breadcrumb-item active">Users</li>
+        </ol>
     </div>
-<ul>
-    {{#each listOfUsers}}
-    <li>
-        <a href="/users/{{_id}}">{{username}}</a>
-    </li>
-    {{/each}}
+    <div class="content-container">
+        <div class="content-grid">
 
-    <a href="/users/new"><button type="submit">Add New User</button></a>
-</ul>
+            {{#each listOfUsers}}
+                <div id="users">
+                    <div id="userImg">
+                        <img src="{{profilePicture}}" alt="{{username}}'s picture'">
+                    </div>
+                    <div id="userName">
+                        <a href="/users/{{_id}}">{{username}}</a>
+                    </div>
+                </div>
+            {{/each}}
+
+            
+        </div>
+    </div>
+    <a href="/users/new" class="btn yellowBtn" id="addUserBtn">Add New User</a>
 </div>

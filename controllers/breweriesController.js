@@ -89,6 +89,7 @@ router.put('/:breweryId', (req, res) => {
     const userId = req.params.userId
     const breweryId = req.params.breweryId
     const updatedBrewery = req.body
+    
 
     User.findById(userId).then(user => {
         const brewery = user.brewCheck.id(breweryId)

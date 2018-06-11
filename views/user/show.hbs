@@ -1,19 +1,28 @@
-<h1>Welcome {{user.username}}!</h1>
-<br>
-<br>
-<h2>Here's your Info</h2>
+<div class="main-container">
+    <div class="header">
+        <h1>Hey {{user.username}}!</h1>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="/">Home</a>
+            </li>
+            <li class="breadcrumb-item">
+                <a href="/users">Users</a>
+            </li>
+            <li class="breadcrumb-item active">{{user.username}}</li>
+        </ol>
+    </div>
+    <h2>Here's your Info</h2>
 
-<div>
-    {{#if user.profilePicture}}
-    <img src="{{user.profilePicture}}" alt="{{user.username}}'s Profile Picture"> {{else}}
-    <img src="http://www.fillmurray.com/g/200/300" alt="{{user.username}}'s Profile Picture"> {{/if}}
+    <div>
+        <img src="{{user.profilePicture}}" alt="{{user.username}}'s Profile Picture">
+    </div>
+    <p>Your Favorite Beer is {{user.favoriteBeer}}</p>
+    <p>Your Favorite Brewery is {{user.favoriteBrewery}}</p>
+
+    <p>Check your your BrewCheck!</p>
+    <a href="/users/{{user._id}}/breweries">BrewCheck!</a>
+
+    <br>
+    <br>
+    <a href="/users/{{user._id}}/edit">Edit User Info</a>
 </div>
-<p>Your Favorite Beer is {{user.favoriteBeer}}</p>
-<p>Your Favorite Brewery is {{user.favoriteBrewery}}</p>
-
-<p>Check your your BrewCheck!</p>
-<a href="/users/{{user._id}}/breweries">BrewCheck!</a>
-
-<br>
-<br>
-<a href="/users/{{user._id}}/edit">Edit User Info</a>

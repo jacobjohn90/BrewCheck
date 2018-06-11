@@ -25,6 +25,9 @@ router.get('/new', (req, res) => {
 // CREATE USER ROUTE
 router.post('/', (req, res) => {
   const newUser = req.body
+  if (newUser.profilePicture === "") {
+    newUser.profilePicture = "https://source.unsplash.com/100x150/?profile"
+  }
   User
     .create(newUser)
     .then(()=> {
@@ -67,6 +70,10 @@ router.get('/:userId/edit', (req, res) => {
 
 //UPDATE ROUTE
 router.put('/:userId', (req, res) => {
+  const updatedUser = req.body
+  if (updatedUser.profilePicture === "") {
+    updatedUser.profilePicture = "https://source.unsplash.com/100x150/?profile"
+  }
   User
     .findByIdAndUpdate(req.params.userId, req.body, {new: true})
     .then(()=> {
