@@ -158,6 +158,9 @@ a {
 #showBeerBtn {
   margin-left: 25%;
 }
+.showImgSize {
+  max-width: 250px;
+}
 
 /* EDIT/NEW */
 .form-container {
