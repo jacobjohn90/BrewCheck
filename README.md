@@ -14,6 +14,7 @@ Here's the Wireframe for BrewCheck!
 ![Wireframe for BrewCheck](https://i.imgur.com/6xPIjj8.jpg "WireFrame")
 
 Here's the ERD for BrewCheck!
+<br>
 ![ERD for BrewCheck](https://i.imgur.com/Rs3lfH0.png "ERD")
 
 #### Technologies/Libraries Used
