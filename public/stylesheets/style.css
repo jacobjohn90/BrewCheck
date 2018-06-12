@@ -20,7 +20,6 @@ body {
 
 .header {
   height: 15vh;
-  font-size: 1rem;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -30,6 +29,7 @@ body {
 
 .header h1 {
   font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
   margin: auto;
 }
 
@@ -82,9 +82,6 @@ body {
 }
 a {
   text-decoration: none;
-}
-.breadcrumb {
-  z-index: 10;
 }
 
 /* Index */
@@ -198,7 +195,7 @@ a {
     background-size: cover;
     background-attachment: fixed;
   }
-  .header {
+  .header h1 {
     font-size: 1.2rem;
   }
   .content-grid {
@@ -251,7 +248,7 @@ a {
 
 
 @media (min-width: 850px) {
-  .header {
+  .header h1 {
     font-size: 2rem;
   }
 }
