@@ -1,14 +1,33 @@
-<h1>Welcome {{user.username}}! This is the {{brewery.nameOfBrewery}} page</h1>
+<div class="main-container">
+    <div class="header">
+        <h1>Welcome {{user.username}}! This is the {{brewery.nameOfBrewery}} page</h1>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="/">Home</a>
+            </li>
+            <li class="breadcrumb-item">
+                <a href="/users">Users</a>
+            </li>
+            <li class="breadcrumb-item">
+                <a href="/users/{{user._id}}">{{user.username}}</a>
+            </li>
+            <li class="breadcrumb-item">
+                <a href="/users/{{user._id}}/breweries">BrewCheck</a>
+            </li>
+            <li class="breadcrumb-item active">{{brewery.nameOfBrewery}}</li>
+        </ol>
+    </div>
+    <div class="show-container">
+        <div class="showImg">
+            <img src="{{brewery.picture}}" alt="Picture of {{brewery.nameOfBrewery}}">
+        </div>
+        <div class="showText">
+        <p>Location: {{brewery.location}}</p>
+        <p>Hours of Operation: {{brewery.hoursOfOperation}}</p>
+        <p>Have You Been Here Yet? {{brewery.tried}}</p>
+        <a href="/users/{{user._id}}/breweries/{{brewery._id}}/beers" class="btn greenBtn">BEERS!</a>
+        <a href="/users/{{user._id}}/breweries/{{brewery._id}}/edit" class="btn yellowBtn">Edit Brewery Info</a>
+        </div>
+    </div>
 
-<div>
-    {{#if brewery.picture}}
-    <img src="{{brewery.picture}}" alt="Picture of {{brewery.nameOfBrewery}}"> {{else}}
-    <img src="https://s3.amazonaws.com/anchor_cms_production/promotions/1/full/brewery-tour.jpg" alt="Picture of {{brewery.nameOfBrewery}}"> {{/if}}
-    <p>Location: {{brewery.location}}</p>
-    <p>Hours of Operation: {{brewery.hoursOfOperation}}</p>
-    <p>Have You Been Here Yet? {{brewery.tried}}</p>
-    <br>
-    <a href="/users/{{user._id}}/breweries/{{brewery._id}}/edit">
-        <button type="submit">Edit Brewery Info</button>
-    </a>
 </div>

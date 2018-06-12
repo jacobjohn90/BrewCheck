@@ -135,11 +135,11 @@ a {
   background-color: rgba(255, 255, 255, 0.75);
   border-radius: 50px;
 }
-#showText {
+.showText {
   margin-left: 10px;
   margin: auto;
 }
-#showImg {
+.showImg {
   margin: auto;
 }
 /* EDIT/NEW */
@@ -201,7 +201,7 @@ a {
     top: 35%;
     left: 10%;
   }
-  #showText {
+  .showText {
     margin-left: 10px;
   }
   .form-container {
