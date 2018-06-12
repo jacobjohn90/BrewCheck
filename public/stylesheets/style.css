@@ -5,9 +5,10 @@ html, body {
   padding: 0;
   height: 100%;
   width: 100%;
+  font-family: 'Roboto', sans-serif;
 }
 body {
-  background: url(https://source.unsplash.com/MYxvETrYabg);
+  background: url(../images/beerSmaller.jpeg);
   background-repeat: no-repeat;
   background-position: top;
   background-size: cover;
@@ -28,7 +29,6 @@ body {
 }
 
 .header h1 {
-  font-family: 'Roboto', sans-serif;
   font-size: 1rem;
   margin: auto;
 }
@@ -77,8 +77,13 @@ body {
 }
 #indexUserBtn {
   position: absolute;
-  left: 33%;
+  left: 40%;
   top: 25%;
+}
+#moreInfoBtn {
+  position: absolute;
+  left: 37.1%;
+  top: 35%;
 }
 a {
   text-decoration: none;
@@ -189,7 +194,7 @@ a {
 
 @media (min-width: 500px) {
   body {
-    background-image: url(https://source.unsplash.com/46Yad80Ynp4);
+    background-image: url(../images/BeerBackgroundLarge.jpeg);
     background-repeat: no-repeat;
     background-position: top;
     background-size: cover;
@@ -206,6 +211,14 @@ a {
   }
   .index-content {
     margin: auto;
+  }
+  #indexUserBtn {
+    left: 30%;
+    top: 40%;
+  }
+  #moreInfoBtn {
+    left: 28.5%;
+    top: 50%;
   }
 
   #userBtn {
@@ -250,5 +263,8 @@ a {
 @media (min-width: 850px) {
   .header h1 {
     font-size: 2rem;
+  }
+  #moreInfoBtn {
+    left: 29.2%;
   }
 }
