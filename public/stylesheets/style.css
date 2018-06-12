@@ -83,6 +83,9 @@ body {
 a {
   text-decoration: none;
 }
+.breadcrumb {
+  z-index: 10;
+}
 
 /* Index */
 
@@ -150,6 +153,7 @@ a {
 #showBeerBtn {
   margin-left: 25%;
 }
+
 /* EDIT/NEW */
 .form-container {
   max-width: 300px;
