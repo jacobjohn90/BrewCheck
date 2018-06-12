@@ -190,10 +190,7 @@ a {
   margin-left: 30%;
 }
 
-
-
 /* MEDIA */
-
 
 @media (min-width: 500px) {
   body {
@@ -260,8 +257,6 @@ a {
     margin-left: 20%;
   }
 }
-
-
 
 @media (min-width: 850px) {
   .header h1 {

@@ -1,4 +1,3 @@
-console.log('hello world')
 window.alert = function(message){
     bootbox.alert(message)
 }

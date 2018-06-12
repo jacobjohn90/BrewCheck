@@ -1,6 +1,5 @@
 const express = require('express')
 const router = express.Router({ mergeParams: true })
-
 const User = require('../models/User')
 const Brewery = require('../models/Brewery')
 const Beer = require('../models/Beer')
@@ -24,6 +23,7 @@ router.get('/', (req, res) => {
             })
         })
 })
+
 //NEW ROUTE TO ADD NEW BEER
 router.get('/new', (req, res) => {
     const userId = req.params.userId
@@ -41,6 +41,7 @@ router.get('/new', (req, res) => {
         })
 
 })
+
 //CREATE ROUTE
 router.post('/', (req, res) => {
     const userId = req.params.userId
@@ -62,6 +63,7 @@ router.post('/', (req, res) => {
             console.log('Error POSTING new beer and redirecting to beers index. Error is: ' + err)
         })
 })
+
 //SHOW ROUTE TO SHOW SPECIFIC BEER
 router.get('/:beerId', (req, res) => {
     const userId = req.params.userId
@@ -84,6 +86,7 @@ router.get('/:beerId', (req, res) => {
             console.log('Error showing specific beer. Error is: ' + err)
         })
 })
+
 //EDIT ROUTE TO EDIT SPECIFIC BEER
 router.get('/:beerId/edit', (req, res) => {
     const userId = req.params.userId
@@ -106,6 +109,7 @@ router.get('/:beerId/edit', (req, res) => {
                 })
         })
 })
+
 //UPDATE ROUTE
 router.put('/:beerId', (req, res) => {
     const userId = req.params.userId
@@ -135,6 +139,7 @@ router.put('/:beerId', (req, res) => {
         })
 
 })
+
 //DELETE ROUTE TO DELETE SPECIFIC BEER
 router.delete('/:beerId', (req, res) => {
     const userId = req.params.userId
