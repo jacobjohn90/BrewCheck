@@ -124,6 +124,11 @@ a {
   flex: 1;
   margin: 10px auto;
 }
+#addBeerBtn {
+  max-width: 200px;
+  flex: 1;
+  margin: 10px auto;
+}
 
 /* Show */
 
@@ -167,6 +172,10 @@ a {
 
 .newBtn {
   margin-left: 25%;
+}
+#beerBtn {
+  margin-top: 10px;
+  margin-left: 30%;
 }
 
 
@@ -223,6 +232,9 @@ a {
   }
   .newBtn {
     margin-left: 31%;
+  }
+  #beerBtn {
+    margin-left: 40%;
   }
 }
 

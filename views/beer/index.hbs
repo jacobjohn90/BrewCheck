@@ -1,11 +1,35 @@
-<h1>Here are the Popular Beers by {{brewery.nameOfBrewery}}</h1>
-
-<ul>
-    {{#each beers}}
-    <li>
-        <a href="/users/{{../user._id}}/breweries/{{../brewery._id}}/beers/{{this._id}}">{{name}}</a>
-        </li>
-    {{/each}}
-</ul>
-
-<a href="/users/{{userId}}/breweries/{{breweryId}}/beers/new"><button type="submit">Add New Beer</button></a>
+<div class="main-container">
+    <div class="header">
+        <h1>Here are the Popular Beers by {{brewery.nameOfBrewery}}</h1>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="/">Home</a>
+            </li>
+            <li class="breadcrumb-item">
+                <a href="/users">Users</a>
+            </li>
+            <li class="breadcrumb-item">
+                <a href="/users/{{user._id}}">{{user.username}}</a>
+            </li>
+            <li class="breadcrumb-item">
+                <a href="/users/{{user._id}}/breweries">BrewCheck</a>
+            </li>
+            <li class="breadcrumb-item">
+                <a href="/users/{{user._id}}/breweries/{{brewery._id}}">{{brewery.nameOfBrewery}}</a>
+            </li>
+            <li class="breadcrumb-item active">Beers</li>
+        </ol>
+    </div>
+    <div class="content-container">
+        <div class="content-grid">
+            {{#each beers}}
+            <div class="index-content">
+                <div class="contentName">
+                    <a href="/users/{{../user._id}}/breweries/{{../brewery._id}}/beers/{{this._id}}">{{name}}</a>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+    <a href="/users/{{userId}}/breweries/{{breweryId}}/beers/new" class="btn yellowBtn" id="addBeerBtn">Add New Beer</a>
+</div>
