@@ -104,10 +104,11 @@ router.get('/:beerId/edit', (req, res) => {
                 brewery,
                 beer
             })
-                .catch((err) => {
-                    console.log('Error trying to go to Edit Page for beer. Error is: ' + err)
-                })
         })
+        .catch((err) => {
+            console.log('Error trying to go to Edit Page for beer. Error is: ' + err)
+        })
+
 })
 
 //UPDATE ROUTE
