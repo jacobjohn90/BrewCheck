@@ -147,6 +147,9 @@ a {
 .showImg {
   margin: auto;
 }
+#showBeerBtn {
+  margin-left: 25%;
+}
 /* EDIT/NEW */
 .form-container {
   max-width: 300px;
@@ -235,6 +238,9 @@ a {
   }
   #beerBtn {
     margin-left: 40%;
+  }
+  #showBeerBtn {
+    margin-left: 20%;
   }
 }
 
