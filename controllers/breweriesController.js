@@ -34,6 +34,9 @@ router.get('/new', (req, res) => {
 //CREATE ROUTE FOR NEW BREWERY
 router.post('/', (req, res) => {
     const brewery = new Brewery(req.body)
+    if (brewery.picture === "") {
+        brewery.picture = "https://source.unsplash.com/ywmJOG45hIM/100x150"
+    }
     User
         .findById(req.params.userId)
         .then((user) => {
@@ -89,7 +92,9 @@ router.put('/:breweryId', (req, res) => {
     const userId = req.params.userId
     const breweryId = req.params.breweryId
     const updatedBrewery = req.body
-    
+    if (updatedBrewery.picture === "") {
+        updatedBrewery.picture = "https://source.unsplash.com/ywmJOG45hIM/150x200"
+    }
 
     User.findById(userId).then(user => {
         const brewery = user.brewCheck.id(breweryId)

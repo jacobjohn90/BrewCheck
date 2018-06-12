@@ -90,7 +90,7 @@ a {
   width: 100%;
   flex: 1
 }
-#users {
+.index-content {
   max-width: 250px;
   min-width: 185px;
   display: flex;
@@ -101,15 +101,16 @@ a {
   border-radius: 50px;
   margin: 10px auto 0 auto;
 }
-#users #userImg {
+.contentImg {
   margin: auto;
   border-radius: 25px;
   flex: 1;
 }
-#users #userName {
-  padding: 20px;
+.contentName {
+  padding: 10px;
+  border-radius: 50px;
   text-decoration: none;
-  background-color: rgba(255, 255, 255, .9);
+  border: 1px dotted black;
   margin: 10px;
   flex: 1;
 }
@@ -118,6 +119,12 @@ a {
   flex: 1;
   margin: 10px auto;
 }
+#addBrewBtn {
+  max-width: 200px;
+  flex: 1;
+  margin: 10px auto;
+}
+
 /* Show */
 
 .show-container {
@@ -176,7 +183,7 @@ a {
     margin: 20px;
     grid-gap: .5% .5%;
   }
-  #users {
+  .index-content {
     margin: auto;
   }
 

@@ -12,6 +12,7 @@
                 <a href="/users/{{user._id}}">{{user.username}}</a>
             </li>
             <li class="breadcrumb-item active">Edit User</li>
+        </ol>
     </div>
     <div class="form-container">
         <form action="/users/{{user._id}}?_method=PUT" method="POST">
@@ -32,7 +33,7 @@
                 <input type="text" name="favoriteBrewery" value={{user.favoriteBrewery}} />
             </div>
 
-            <button type="submit" class="btn yellowBtn" >Update User</button>
+            <button type="submit" class="btn yellowBtn">Update User</button>
         </form>
         <form action="/users/{{user._id}}?_method=DELETE" method="POST">
             <button type="submit" class="btn redBtn">Delete User</button>

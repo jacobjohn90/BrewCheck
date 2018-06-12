@@ -1,11 +1,34 @@
-<h1>
-    Welcome to your BrewCheck, {{user.username}}</h1>
+<div class="main-container">
+    <div class="header">
+        <h1>
+            Welcome to your BrewCheck, {{user.username}}</h1>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="/">Home</a>
+            </li>
+            <li class="breadcrumb-item">
+                <a href="/users">Users</a>
+            </li>
+            <li class="breadcrumb-item">
+                <a href="/users/{{user._id}}">{{user.username}}</a>
+            </li>
+            <li class="breadcrumb-item active">BrewCheck</li>
+        </ol>
+    </div>
+    <div class="content-container">
+        <div class="content-grid">
+            {{#each breweries}}
+            <div class="index-content">
+                <div class="contentImg">
+                    <img src="{{picture}}" alt="Image of Brewery" srcset="">
+                </div>
+                <div class="contentName">
+                    <a href="/users/{{../user._id}}/breweries/{{this._id}}">{{nameOfBrewery}}</a>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+    <a href="/users/{{user._id}}/breweries/new" class="btn yellowBtn" id="addBrewBtn">Add New Brewery</a>
 
-<ul>
-    {{#each breweries}}
-    <li>
-        <a href="/users/{{../user._id}}/breweries/{{this._id}}">{{nameOfBrewery}}</a>
-    </li>
-    {{/each}}
-    <a href="/users/{{user._id}}/breweries/new"><button type="submit">Add New Brewery</button></a>
-</ul>
+</div>

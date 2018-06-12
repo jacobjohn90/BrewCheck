@@ -11,17 +11,17 @@
             <li class="breadcrumb-item active">{{user.username}}</li>
         </ol>
     </div>
-        <div class="show-container">
-            <div id="showImg">
-                <img src="{{user.profilePicture}}" alt="{{user.username}}'s Profile Picture">
-            </div>
-            <div id="showText">
-                <p>Your Favorite Beer is {{user.favoriteBeer}}</p>
-                <p>Your Favorite Brewery is {{user.favoriteBrewery}}</p>
-                <a href="/users/{{user._id}}/breweries" class="btn greenBtn" id="brewBtn">BrewCheck!</a>
-                <a href="/users/{{user._id}}/edit" class="btn yellowBtn" id="editUserBtn">Edit User Info</a>
-            </div>
+    <div class="show-container">
+        <div id="showImg">
+            <img src="{{user.profilePicture}}" alt="{{user.username}}'s Profile Picture">
         </div>
+        <div id="showText">
+            <p>Your Favorite Beer is {{user.favoriteBeer}}</p>
+            <p>Your Favorite Brewery is {{user.favoriteBrewery}}</p>
+            <a href="/users/{{user._id}}/breweries" class="btn greenBtn" id="brewBtn">BrewCheck!</a>
+            <a href="/users/{{user._id}}/edit" class="btn yellowBtn" id="editUserBtn">Edit User Info</a>
+        </div>
+    </div>
     <br>
     <br>
 
