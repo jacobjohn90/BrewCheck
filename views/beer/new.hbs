@@ -35,15 +35,17 @@
             </div>
             <div class="form-row">
                 <label for="abv">ABV</label>
-                <input type="text" name="abv" step="0.01" placeholder="0.00"/>
+                <input type="text" name="abv" step="0.01" placeholder="0.00" />
             </div>
             <div class="form-row">
                 <span>Have you Tried this Beer Yet?</span>
-                <input type="radio" id="tried1" name="tried" value="Yup!">
-                <label for="contactChoice1">Yup!</label>
+                <div class="noFlex">
+                    <input type="radio" id="tried1" name="tried" value="Yup!">
+                    <label for="contactChoice1">Yup!</label>
 
-                <input type="radio" id="tried2" name="tried" value="Not Yet!">
-                <label for="contactChoice2">Not Yet!</label>
+                    <input type="radio" id="tried2" name="tried" value="Not Yet!">
+                    <label for="contactChoice2">Not Yet!</label>
+                </div>
             </div>
             <div class="form-row">
                 <label for="rating">Rate This Beer! (10 is the best, 1 is the worst)</label>
