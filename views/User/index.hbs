@@ -14,15 +14,13 @@
             {{#each listOfUsers}}
                 <div class="index-content">
                     <div class="contentImg">
-                        <img src="{{profilePicture}}" alt="{{username}}'s picture'">
+                        <img src="{{profilePicture}}" alt="{{username}}'s picture'" id="userIndexImg">
                     </div>
                     <div class="contentName">
                         <a href="/users/{{_id}}">{{username}}</a>
                     </div>
                 </div>
             {{/each}}
-
-            
         </div>
     </div>
     <a href="/users/new" class="btn yellowBtn" id="addUserBtn">Add New User</a>

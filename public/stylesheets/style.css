@@ -134,6 +134,9 @@ a {
   flex: 1;
   margin: 10px auto;
 }
+#userIndexImg {
+  max-width: 100px;
+}
 
 /* Show */
 

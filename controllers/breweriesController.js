@@ -34,6 +34,7 @@ router.get('/new', (req, res) => {
             console.log('Error trying to go to create a New Brewery! The error is: ' + err)
         })
 })
+
 //CREATE ROUTE FOR NEW BREWERY
 router.post('/', (req, res) => {
     const brewery = new Brewery(req.body)
@@ -54,6 +55,7 @@ router.post('/', (req, res) => {
         })
 
 })
+
 //SHOW ROUTE FOR SPECIFIC BREWERY
 router.get('/:breweryId', (req, res) => {
     const userId = req.params.userId
@@ -72,6 +74,7 @@ router.get('/:breweryId', (req, res) => {
             console.log('Error trying to show specific brewery. Error is: ' + err)
         })
 })
+
 //EDIT ROUTE FOR SPECIFIC BREWERY
 router.get('/:breweryId/edit', (req, res) => {
     const userId = req.params.userId
@@ -90,6 +93,7 @@ router.get('/:breweryId/edit', (req, res) => {
             })
         })
 })
+
 //UPDATE ROUTE FOR SPECIFIC BREWERY
 router.put('/:breweryId', (req, res) => {
     const userId = req.params.userId
@@ -113,6 +117,7 @@ router.put('/:breweryId', (req, res) => {
     })
 
 })
+
 //DELETE ROUTE FOR SPECIFIC BREWERY
 router.delete('/:breweryId', (req, res) => {
     const userId = req.params.userId
