@@ -1,32 +1,49 @@
-
-<h1>Create New Brewery</h1>
-
-<form action="/users/{{userId}}/breweries" method="POST">
-    <div>
-        <label for="nameOfBrewery">Name of Brewery</label>
-        <input type="text" name="nameOfBrewery" placeholder="Name of Brewery" />
+<div class="main-container">
+    <div class="header">
+        <h1>Create New Brewery</h1>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="/">Home</a>
+            </li>
+            <li class="breadcrumb-item">
+                <a href="/users">Users</a>
+            </li>
+            <li class="breadcrumb-item">
+                <a href="/users/{{user._id}}">{{user.username}}</a>
+            </li>
+            <li class="breadcrumb-item">
+                <a href="/users/{{user._id}}/breweries">BrewCheck</a>
+            </li>
+            <li class="breadcrumb-item active">New Brewery</li>
+        </ol>
     </div>
-    <div>
-        <label for="picture">Picture of Brewery URL</label>
-        <input type="text" name="picture" />
-    </div>
-    <div>
-        <label for="location">Location of Brewery</label>
-        <input type="text" name="location" placeholder="Location" />
-    </div>
-    <div>
-        <label for="hoursOfOperation">Hours of Operation</label>
-        <input type="text" name="hoursOfOperation" placeholder="Hours of Operation" />
-    </div>
-    <div>
-        <span>Have you Tried this Place Yet?</span>
-        <input type="radio" id="tried1" name="tried" value="Yup!">
-        <label for="contactChoice1">Yup!</label>
+    <div class="form-container">
+        <form action="/users/{{userId}}/breweries" method="POST">
+            <div class="form-row">
+                <label for="nameOfBrewery">Name of Brewery</label>
+                <input type="text" name="nameOfBrewery" placeholder="Name of Brewery" />
+            </div>
+            <div class="form-row">
+                <label for="picture">Picture of Brewery URL</label>
+                <input type="text" name="picture" />
+            </div>
+            <div class="form-row">
+                <label for="location">Location of Brewery</label>
+                <input type="text" name="location" placeholder="Location" />
+            </div class="form-row">
+            <div class="form-row">
+                <label for="hoursOfOperation">Hours of Operation</label>
+                <input type="text" name="hoursOfOperation" placeholder="Hours of Operation" />
+            </div class="form-row">
+            <div class="form-row">
+                <span>Have you Tried this Place Yet? </span>
+                <input type="radio" id="tried1" name="tried" value="Yup!">
+                <label for="contactChoice1">Yup!</label>
 
-        <input type="radio" id="tried2" name="tried" value="Not Yet!">
-        <label for="contactChoice2">Not Yet!</label>
-
-        <br>
-        <br>
-        <button type="submit">Save Brewery</button>
-</form>
+                <input type="radio" id="tried2" name="tried" value="Not Yet!">
+                <label for="contactChoice2">Not Yet!</label>
+            </div>
+            <button type="submit" class="btn greenBtn newBtn">Save Brewery</button>
+        </form>
+    </div>
+</div>

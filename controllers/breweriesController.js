@@ -23,9 +23,12 @@ router.get('/', (req, res) => {
 //NEW ROUTE FOR NEW BREWERY
 router.get('/new', (req, res) => {
     const userId = req.params.userId
-
-    res.render('brewery/new', {
-        userId
+    User.findById(userId)
+        .then((user)=>{
+            res.render('brewery/new', {
+                userId,
+                user,
+        })
     })
         .catch((err) => {
             console.log('Error trying to go to create a New Brewery! The error is: ' + err)

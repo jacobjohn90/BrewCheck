@@ -161,6 +161,14 @@ a {
 .form-row input {
   flex: 1;
 }
+.form-row span {
+  margin-right: 40px;
+}
+
+.newBtn {
+  margin-left: 25%;
+}
+
 
 
 /* MEDIA */
@@ -209,6 +217,13 @@ a {
     position: absolute;
     top: 35%;
     left: 10%;
+  }
+  .form-row span {
+    margin-right: 5px;
+  }
+  .newBtn {
+    margin-left: 31%;
+  }
 }
 
 

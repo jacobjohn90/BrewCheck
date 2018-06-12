@@ -1,34 +1,55 @@
-<h1>Edit {{brewery.nameOfBrewery}}</h1>
+<div class="main-container">
+    <div class="header">
+        <h1>Edit {{brewery.nameOfBrewery}}</h1>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="/">Home</a>
+            </li>
+            <li class="breadcrumb-item">
+                <a href="/users">Users</a>
+            </li>
+            <li class="breadcrumb-item">
+                <a href="/users/{{user._id}}">{{user.username}}</a>
+            </li>
+            <li class="breadcrumb-item">
+                <a href="/users/{{user._id}}/breweries">BrewCheck</a>
+            </li>
+            <li class="breadcrumb-item">
+                <a href="/users/{{user._id}}/breweries/{{brewery._id}}">{{brewery.nameOfBrewery}}</a>
+            </li>
+            <li class="breadcrumb-item active">Edit {{brewery.nameOfBrewery}}</li>
+        </ol>
+    </div>
+    <div class="form-container">
+        <form action="/users/{{userId}}/breweries/{{brewery._id}}?_method=PUT" method="POST">
+            <div class="form-row">
+                <label for="nameOfBrewery">Name of Brewery</label>
+                <input type="text" name="nameOfBrewery" value={{brewery.nameOfBrewery}} />
+            </div>
+            <div class="form-row">
+                <label for="picture">Picture of Brewery URL</label>
+                <input type="text" name="picture" value="{{brewery.picture}}" />
+            </div>
+            <div class="form-row">
+                <label for="location">Location of Brewery</label>
+                <input type="text" name="location" value={{brewery.location}} />
+            </div>
+            <div class="form-row">
+                <label for="hoursOfOperation">Hours of Operation</label>
+                <input type="text" name="hoursOfOperation" value={{brewery.hoursOfOperation}} />
+            </div>
+            <div class="form-row">
+                <span>Have you Tried this Place Yet?</span>
+                <input type="radio" id="tried1" name="tried" value="Yup!" checked="{{checked}} === 'Not Yet!'"=>
+                <label for="contactChoice1">Yup!</label>
 
-<form action="/users/{{userId}}/breweries/{{brewery._id}}?_method=PUT" method="POST">
-    <div>
-        <label for="nameOfBrewery">Name of Brewery</label>
-        <input type="text" name="nameOfBrewery" value={{brewery.nameOfBrewery}} />
+                <input type="radio" id="tried2" name="tried" value="Not Yet!" checked="{{checked}} === 'Yup!'">
+                <label for="contactChoice2">Not Yet!</label>
+                <button type="submit" class="btn greenBtn">Save Brewery</button>
+            </div>
+        </form>
+        <form action="/users/{{user._id}}/breweries/{{brewery._id}}?_method=DELETE" method="POST">
+            <button type="submit" class="btn redBtn">Delete Brewery</button>
+        </form>
     </div>
-    <div>
-        <label for="picture">Picture of Brewery URL</label>
-        <input type="text" name="picture" value="{{brewery.picture}}"/>
-    </div>
-    <div>
-        <label for="location">Location of Brewery</label>
-        <input type="text" name="location" value={{brewery.location}} />
-    </div>
-    <div>
-        <label for="hoursOfOperation">Hours of Operation</label>
-        <input type="text" name="hoursOfOperation" value={{brewery.hoursOfOperation}} />
-    </div>
-    <div>
-        <span>Have you Tried this Place Yet?</span>
-        <input type="radio" id="tried1" name="tried" value="Yup!" checked="{{checked}} === 'Not Yet!'"=>
-        <label for="contactChoice1">Yup!</label>
-
-        <input type="radio" id="tried2" name="tried" value="Not Yet!" checked="{{checked}} === 'Yup!'">
-        <label for="contactChoice2">Not Yet!</label>
-
-        <br>
-        <br>
-        <button type="submit">Save Brewery</button>
-</form>
-<form action="/users/{{user._id}}/breweries/{{brewery._id}}?_method=DELETE" method="POST">
-    <button type="submit">Delete Brewery</button>
-</form>
+</div>
