@@ -134,7 +134,7 @@ a {
   flex: 1;
   margin: 10px auto;
 }
-#userIndexImg {
+.indexImg {
   max-width: 100px;
 }
 
