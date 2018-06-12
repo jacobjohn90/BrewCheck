@@ -1,32 +1,55 @@
-<h1>Add a New Beer!</h1>
+<div class="main-container">
+    <div class="header">
+        <h1>Add a New Beer!</h1>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="/">Home</a>
+            </li>
+            <li class="breadcrumb-item">
+                <a href="/users">Users</a>
+            </li>
+            <li class="breadcrumb-item">
+                <a href="/users/{{user._id}}">{{user.username}}</a>
+            </li>
+            <li class="breadcrumb-item">
+                <a href="/users/{{user._id}}/breweries">BrewCheck</a>
+            </li>
+            <li class="breadcrumb-item">
+                <a href="/users/{{user._id}}/breweries/{{brewery._id}}">{{brewery.nameOfBrewery}}</a>
+            </li>
+            <li class="breadcrumb-item">
+                <a href="/users/{{user._id}}/breweries/{{brewery._id}}/beers">Beers</a>
+            </li>
+            <li class="breadcrumb-item active">New Beer</li>
+        </ol>
+    </div>
+    <div class="form-container">
+        <form action="/users/{{userId}}/breweries/{{breweryId}}/beers" method="POST">
+            <div class="form-row">
+                <label for="name">Name of Beer</label>
+                <input type="text" name="name" placeholder="Name of Beer" />
+            </div>
+            <div class="form-row">
+                <label for="Type">Type of Beer</label>
+                <input type="text" name="Type" placeholder="Type of Beer" />
+            </div>
+            <div class="form-row">
+                <label for="abv">ABV</label>
+                <input type="number" name="abv" placeholder="0.00" />
+            </div>
+            <div class="form-row">
+                <span>Have you Tried this Beer Yet?</span>
+                <input type="radio" id="tried1" name="tried" value="Yup!">
+                <label for="contactChoice1">Yup!</label>
 
-<form action="/users/{{userId}}/breweries/{{breweryId}}/beers" method="POST">
-    <div>
-        <label for="name">Name of Beer</label>
-        <input type="text" name="name" placeholder="Name of Beer" />
+                <input type="radio" id="tried2" name="tried" value="Not Yet!">
+                <label for="contactChoice2">Not Yet!</label>
+            </div>
+            <div class="form-row">
+                <label for="rating">Rate This Beer! (10 is the best, 1 is the worst)</label>
+                <input type="number" name="rating" placeholder="5" />
+            </div>
+            <button type="submit">Save Beer</button>
+        </form>
     </div>
-    <div>
-        <label for="Type">Type of Beer</label>
-        <input type="text" name="Type" placeholder="Type of Beer"/>
-    </div>
-    <div>
-        <label for="abv">ABV</label>
-        <input type="number" name="abv" placeholder="0.00" />
-    </div>
-        <div>
-        <span>Have you Tried this Beer Yet?</span>
-        <input type="radio" id="tried1" name="tried" value="Yup!">
-        <label for="contactChoice1">Yup!</label>
-
-        <input type="radio" id="tried2" name="tried" value="Not Yet!">
-        <label for="contactChoice2">Not Yet!</label>
-    </div>
-    <div>
-        <label for="rating">Rate This Beer! (10 is the best, 1 is the worst)</label>
-        <input type="number" name="rating" placeholder="5" />
-    </div>
-        <br>
-        <br>
-        <button type="submit">Save Beer</button>
-</form>
-
+</div>
